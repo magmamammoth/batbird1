@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://41p5ypjv4j2m"]
+
+[node name="bird" type="CharacterBody2D" unique_id=1129693726]
