@@ -15,14 +15,14 @@ func _physics_process(delta: float) -> void:
 
 func _on_topspike_body_entered(body: Node2D) -> void:
 	if body is bird:
-		print("top")
+		body.die()
 
 
 func _on_bottomspike_body_entered(body: Node2D) -> void:
 	if body is bird:
-		print("bottom")
+		body.die()
 
 
-func _on_passarea_body_entered(body: Node2D) -> void:
+func _on_passarea_body_entered(body: Node2D):
 	if body is bird:
-		print("SCORE")
+		print("yoohoo")

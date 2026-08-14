@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dqeqdf3x7j15r"]
+
+[ext_resource type="Script" uid="uid://hkfoyngqjmrw" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://41p5ypjv4j2m" path="res://scenes/bird.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dymggiv5fnta3" path="res://assests/Clouds/Clouds 3/1.png" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bqspt3r74gapr" path="res://scenes/obstacle_spawner.tscn" id="2_sugp2"]
+
+[node name="game" type="Node2D" unique_id=1863961947]
+script = ExtResource("1_jyhfs")
+
+[node name="background" type="Sprite2D" parent="." unique_id=374705151]
+position = Vector2(575.5, 326)
+scale = Vector2(2.0329862, 2.0617285)
+texture = ExtResource("2_0wfyh")
+
+[node name="obstacle_spawner" parent="." unique_id=1606883593 instance=ExtResource("2_sugp2")]
+position = Vector2(1258, 317)
+
+[node name="bird" parent="." unique_id=1129693726 instance=ExtResource("1_o5qli")]
+position = Vector2(144, 231)
+scale = Vector2(2.5, 2.5)
+
+[connection signal="game_started" from="bird" to="." method="_on_bird_game_started"]
