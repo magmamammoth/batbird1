@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://12o7mm4h6uqq"]
+
+[ext_resource type="Texture2D" uid="uid://cnt4kx7dg7cjs" path="res://assests/spike.png" id="1_7ukg5"]
+[ext_resource type="Script" uid="uid://bmflc8ywn271c" path="res://scripts/obstacle.gd" id="1_drdry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56af7"]
+size = Vector2(12, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfoqr"]
+size = Vector2(6, 39)
+
+[node name="Obstacle" type="CharacterBody2D" unique_id=2027618749]
+script = ExtResource("1_drdry")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343284199]
+shape = SubResource("RectangleShape2D_sghoa")
+disabled = true
+
+[node name="topspike" type="Area2D" parent="." unique_id=2086497785]
+position = Vector2(0, -54)
+
+[node name="Sprite2D" type="Sprite2D" parent="topspike" unique_id=1189419377]
+texture = ExtResource("1_7ukg5")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topspike" unique_id=1544955051]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_56af7")
+
+[node name="bottomspike" type="Area2D" parent="." unique_id=1605043893]
+position = Vector2(0, 53)
+
+[node name="Sprite2D" type="Sprite2D" parent="bottomspike" unique_id=1055932358]
+texture = ExtResource("1_7ukg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomspike" unique_id=969779355]
+shape = SubResource("RectangleShape2D_56af7")
+
+[node name="passarea" type="Area2D" parent="." unique_id=1297315934]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passarea" unique_id=851531971]
+position = Vector2(4, -0.5)
+shape = SubResource("RectangleShape2D_mfoqr")
+
+[connection signal="body_entered" from="topspike" to="." method="_on_topspike_body_entered"]
+[connection signal="body_entered" from="bottomspike" to="." method="_on_bottomspike_body_entered"]
+[connection signal="body_entered" from="passarea" to="." method="_on_passarea_body_entered"]
