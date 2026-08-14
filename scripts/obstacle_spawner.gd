@@ -7,6 +7,11 @@ var obstacle_scene: PackedScene = preload("res://scenes/obstacle.tscn")
 func _on_spawn_timer_timeout() -> void:
 	var obstacle = obstacle_scene.instantiate()
 	obstacle.scale = Vector2.ONE * 5
+	
+	#randomize
+	var rand = randf_range(-100,100)
+	obstacle.position.y = rand
+	
 	add_child(obstacle)
 
 

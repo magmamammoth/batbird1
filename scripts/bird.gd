@@ -4,7 +4,7 @@ class_name bird
 
 #VARS
 var JUMP_CONST = 550
-var GRAVITY = 790
+var GRAVITY = 980
 var jump_count = 0
 signal game_started
 
