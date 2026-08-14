@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://dqeqdf3x7j15r"]
 
 [ext_resource type="PackedScene" uid="uid://41p5ypjv4j2m" path="res://scenes/bird.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dymggiv5fnta3" path="res://assests/Clouds/Clouds 3/1.png" id="2_0wfyh"]
 
-[node name="Node2D" type="Node2D" unique_id=1863961947]
+[node name="game" type="Node2D" unique_id=1863961947]
+
+[node name="background" type="Sprite2D" parent="." unique_id=374705151]
+position = Vector2(575.5, 326)
+scale = Vector2(2.0329862, 2.0617285)
+texture = ExtResource("2_0wfyh")
 
 [node name="bird" parent="." unique_id=1129693726 instance=ExtResource("1_o5qli")]
-position = Vector2(246, 319)
-scale = Vector2(2.215, 2.215)
+position = Vector2(144, 231)
+scale = Vector2(2.5, 2.5)
