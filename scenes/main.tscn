@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqeqdf3x7j15r"]
+
+[ext_resource type="PackedScene" uid="uid://41p5ypjv4j2m" path="res://scenes/bird.tscn" id="1_o5qli"]
+
+[node name="Node2D" type="Node2D" unique_id=1863961947]
+
+[node name="bird" parent="." unique_id=1129693726 instance=ExtResource("1_o5qli")]
+position = Vector2(246, 319)
+scale = Vector2(2.215, 2.215)
